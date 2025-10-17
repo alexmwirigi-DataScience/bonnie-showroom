@@ -4,123 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bonnie Mobile Spares Ltd | Home</title>
+    
+    <!-- Link to Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Link to Your Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- ============================== -->
-<!--    NAVIGATION OVERLAY MENU     -->
-<!-- ============================== -->
-<nav class="nav-overlay">
-    <div class="nav-overlay-content">
-        <button class="close-btn">&times;</button>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="#">About</a></li> <!-- Placeholder -->
-            <li><a href="#">Contact</a></li> <!-- Placeholder -->
-        </ul>
-    </div>
-</nav>
 
+    <!-- ==============================
+        HEADER (Consistent on all pages)
+    ============================== -->
     <header>
         <div class="header-left">
             <button class="menu-btn">Menu</button>
         </div>
         <a href="index.html" class="logo">
-    <img src="images/bms_logo.png" alt="Bonnie Mobile Spares Logo">
-</a>
-        <div class="header-right">
-            <a href="#">&#128100;</a> <!-- User Icon -->
-            <a href="#">&#128269;</a> <!-- Search Icon -->
-            <a href="#">&#128722;</a> <!-- Cart Icon -->
+            <img src="images/bms_logo.png" alt="Bonnie Mobile Spares Logo">
+        
         </div>
     </header>
 
+    <!-- ==============================
+        NAVIGATION OVERLAY (Consistent on all pages)
+    ============================== -->
+    <nav class="nav-overlay">
+        <div class="nav-overlay-content">
+            <button class="close-btn">&times;</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="LCDDISPLAY.html">LCD Displays</a></li>
+                <li><a href="Tools.html">Repair Tools</a></li>
+                <li><a href="sparesparts.html">Spare Parts</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==============================
+        MAIN PAGE CONTENT
+    ============================== -->
     <main>
-        <!-- Page-specific content will go here -->
 
-<!-- ======================================================================= -->
-<!-- ======================= START: HOMEPAGE CONTENT ======================= -->
-<!-- ======================================================================= -->
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="eyebrow-text">BONNIE MOBILE SPARES LTD</p>
+                <h1>Your Trusted Source for Mobile Spare Parts, Tools & Accessories</h1>
+            </div>
+            <div class="scroll-indicator">
+                <span>SCROLL TO DISCOVER</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
 
-<!-- HERO SECTION -->
-<section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <p class="eyebrow-text">BONNIE MOBILE SPARES LTD</p>
-        <h1>Your Trusted Source for Mobile Spare Parts, Tools & Accessories</h1>
-    </div>
-    <div class="scroll-indicator">
-        <span>SCROLL TO DISCOVER</span>
-        <div class="scroll-line"></div>
-    </div>
-    <a href="products.html" class="explore-button">Explore Products</a>
-</section>
+        <!-- ========================================================== -->
+<!--            NEW: FULL-WIDTH IMAGE SHOWCASE SECTION            -->
+<!-- ========================================================== -->
 
-<!-- PRODUCT INTRO SECTION -->
-<section class="product-intro">
-    <div class="product-intro-image">
-        <!-- Add image to /images/ folder -->
-        <img src="images/sam_glass.jpg" alt="Camera Glass Protector">
-    </div>
-    <div class="product-intro-text">
-    <p class="eyebrow-text">BMS PREMIUM ACCESSORY</p>
-    <h2>Samsung Camera Glass  Precision Protection</h2>
-    <div class="product-options">
-        <span>Scratch Resistant</span>
-        <span>Crystal Clear</span>
-        <span>Perfect Fit</span>
-    </div>
-    <p>The <strong>Samsung Camera Glass</strong> is crafted to safeguard your lenses without compromising photo quality. With ultra-clear transparency and a precise fit, it offers premium protection while preserving the original camera performance.</p>
-    <p>Designed for a wide range of Samsung models, this glass is engineered for durability, clarity, and easy installation  giving your device a clean, flagship finish that lasts.</p>
-    <a href="products.html" class="compose-button">View Collection</a>
-</div>
 
-</div>
+        <!-- Product Intro Section -->
+        <section class="product-intro">
+            <div class="product-intro-image">
+                <img src="images/sam_glass.jpg" alt="Samsung Camera Glass Protector">
+            </div>
+            <div class="product-intro-text">
+                <p class="eyebrow-text">BMS PREMIUM ACCESSORY</p>
+                <h2>Samsung Camera Glass Precision Protection</h2>
+                <div class="product-options">
+                    <span>Scratch Resistant</span>
+                    <span>Crystal Clear</span>
+                    <span>Perfect Fit</span>
+                </div>
+                <p>The <strong>Samsung Camera Glass</strong> is crafted to safeguard your lenses without compromising photo quality. With ultra-clear transparency and a precise fit, it offers premium protection while preserving the original camera performance.</p>
+                <a href="accessories.html" class="compose-button">View Accessories</a>
+            </div>
+        </section>
 
-</section>
+        <!-- Dark Section (Special Feature) -->
+        <section class="dark-section ferrari-edition">
+           <div class="ferrari-content">
+                <h2>Samsung Galaxy Note 10 LCD Screen</h2>
+                <p>Experience flagship clarity and precision with the Samsung Galaxy Note 10 replacement LCD screen. Designed for perfect compatibility, it delivers vibrant colors, sharp resolution, and smooth touch response — restoring your device to its original brilliance.</p>
+                <a href="LCDDISPLAY.html" class="compose-button">View LCD Displays</a>
+            </div>
+            <div class="ferrari-image">
+                <img src="images/note1.png" alt="Samsung Galaxy Note 10 lcd screen">
+            </div>
+        </section>
 
-<!-- DARK SECTION (SPECIAL FEATURE) -->
-<section class="dark-section ferrari-edition">
-   <div class="ferrari-content">
-    <h2>Samsung Galaxy Note 10 LCD Screen</h2>
-    <p>Experience flagship clarity and precision with the Samsung Galaxy Note 10 replacement LCD screen. Designed for perfect compatibility, it delivers vibrant colors, sharp resolution, and smooth touch response — restoring your device to its original brilliance. Ideal for professional technicians and quality repairs.</p>
-    <button class="discover-button">Shop Now</button>
-</div>
-<div class="ferrari-image">
-    <div class="ferrari-image">
-        <!-- Add image to /images/ folder -->
-        <img src="images/note1.png" alt="Samsung Galaxy Note 10 lcd screen">
-    </div>
-</section>
+        <!-- Final Feature Section -->
+        <section class="feature-section">
+            <div class="feature-content">
+                <h3>Gordak 952 — Professional Rework Station</h3>
+                <p>The <strong>Gordak 952</strong> is a trusted choice for technicians who demand precision and reliability. Featuring dual control for hot air and soldering iron, it delivers stable temperature and exceptional performance for board-level repairs.</p>
+                <a href="Tools.html" class="compose-button">View Tools</a>
+            </div>
+            <div class="feature-image">
+                <img src="images/gordak.png" alt="Gordak 952 Rework Station">
+            </div>
+        </section>
+   
+   <div class="video-wrapper">
+ 
 
-<!-- FINAL FEATURE SECTION -->
-<section class="feature-section">
-    <div class="feature-content">
-    <h3>Gordak 952 — Professional Rework Station</h3>
-    <p>The <strong>Gordak 952</strong> is a trusted choice for technicians who demand precision and reliability. Featuring dual control for hot air and soldering iron, it delivers stable temperature, fast heat-up, and exceptional performance for board-level repairs. Perfect for mobile repair shops and advanced electronics work.</p>
-    <button class="discover-button">Shop Now</button>
-</div>
 
-    <div class="feature-image">
-        <!-- Add image to /images/ folder -->
-        <img src="images/gordak.png" alt="Mobile Repair Tools">
-    </div>
-</section>
-
-<!-- ======================================================================= -->
-<!-- ======================== END: HOMEPAGE CONTENT ======================== -->
-<!-- ======================================================================= -->
 
         
+        <!-- Showroom Browser Section -->
+        <section class="showroom-browser">
+            <h2>Explore the Showroom</h2>
+            <p>Discover our curated collections of premium parts and accessories.</p>
+            <div class="category-grid">
+                <a href="LCDDISPLAY.html" class="category-card">
+                    <img src="images/note1.png" alt="A beautiful shot of a replacement screen">
+                    <div class="category-card-title">LCD Displays</div>
+                </a>
+                <a href="Tools.html" class="category-card">
+                    <img src="images/gordak.png" alt="A professional repair toolkit">
+                    <div class="category-card-title">Repair Tools</div>
+                </a>
+                <a href="accessories.html" class="category-card">
+                    <img src="images/sam_glass.jpg" alt="A collection of phone accessories">
+                    <div class="category-card-title">Accessories</div>
+                </a>
+                <a href="sparesparts.html" class="category-card">
+                    <img src="images\y17s-power-switch.png" alt="A collection of spare parts">
+                    <div class="category-card-title">Spare Parts</div>
+                </a>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="dark-section">
-       <div class="footer-container">
-           <p>&copy; Bonnie Mobile Spares Ltd 2025. All Rights Reserved.</p>
-       </div>
+    <!-- ==============================
+        FOOTER (Consistent on all pages)
+    ============================== -->
+    <footer>
+        <div class="footer-main">
+            <div class="footer-column">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Orders and delivery</a></li>
+                    <li><a href="#">Returns and refunds</a></li>
+                    <li><a href="#">Payment and pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>About BMSL</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Our Promise</a></li>
+                    <li><a href="#">Policies</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Discounts and Membership</h4>
+                <ul>
+                    <li><a href="#">Affiliate program</a></li>
+                    <li><a href="#">Refer a friend</a></li>
+                    <li><a href="#">BMSL membership</a></li>
+                    <li><a href="#">Student Discount</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Follow us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <div class="footer-legal-links">
+                <a href="#">Privacy policy</a>
+                <a href="#">Terms and conditions</a>
+                <a href="#">Accessibility</a>
+            </div>
+            <p class="copyright-text">© Copyright 2025 Bonnie Mobile Spares Ltd. All rights reserved.</p>
+        </div>
     </footer>
 
+    <!-- Your JavaScript File -->
     <script src="js/script.js"></script>
+
 </body>
 </html>

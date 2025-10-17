@@ -1,3 +1,9 @@
+/* ===================================================================
+   Project: Bonnie Mobile Spares Ltd - Main Stylesheet
+   Version: 1.0 (Final)
+   Author: You!
+=================================================================== */
+
 /* ==============================
    Global Variables & Base Styles
 ============================== */
@@ -19,15 +25,17 @@ body {
     font-family: var(--font-sans);
     background-color: var(--background-light);
     color: var(--text-dark);
-    overflow-x: hidden; /* Prevents horizontal scroll */
+    overflow-x: hidden;
+}
+
+/* Prevent body scroll when menu is open */
+.body-no-scroll {
+    overflow: hidden;
 }
 
 /* ==============================
    Reusable Components: Header & Footer
-   (These will be on every page)
 ============================== */
-
-/* HEADER */
 header {
     position: fixed;
     top: 0;
@@ -48,8 +56,14 @@ header.scrolled {
     backdrop-filter: blur(10px);
 }
 
+header a.logo {
+    display: block;
+    line-height: 0; /* Prevents extra space around the image */
+}
+
 header .logo img {
-    height: 30px;
+    height: 38px;
+
 }
 
 header .header-left, header .header-right {
@@ -59,10 +73,10 @@ header .header-left, header .header-right {
 }
 
 header a, header .menu-btn {
-    color: var(--text-light);
+    color:black;
     text-decoration: none;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 300;
     background: none;
     border: none;
     cursor: pointer;
@@ -70,29 +84,25 @@ header a, header .menu-btn {
 }
 
 header a:hover, header .menu-btn:hover {
-    color: var(--accent-color);
+    color: rgb(100, 6, 6);
 }
 
-
-/* FOOTER */
 footer {
-    background: var(--background-dark);
-    color: #aaa;
+    background:red;
+    color: #0a0909;
     text-align: center;
-    padding: 40px 20px;
     font-size: 13px;
     letter-spacing: 1px;
 }
 
-
 /* ==============================
-   Page-Specific: Homepage Sections
+   Page-Specific: Homepage
 ============================== */
 
-/* HERO SECTION */
+/* --- Hero Section --- */
 .hero {
     height: 100vh;
-    background: url('../images/hero-background.jpg') no-repeat center center/cover; /* Make sure you have a hero-background.jpg in /images/ */
+    background: url('../images/Grey Elegant New Skincare Product Banner (5).png') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,19 +110,20 @@ footer {
     color: var(--text-light);
     padding: 0 80px;
     position: relative;
+    color:black
 }
 
 .hero-overlay {
     content: "";
     position: absolute;
-    inset: 0; /* A modern way to say top:0, left:0, bottom:0, right:0 */
-    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+    inset: 0;
+     
     z-index: 1;
 }
 
 .hero-content, .scroll-indicator, .explore-button {
     position: relative;
-    z-index: 2; /* Ensures content is above the overlay */
+    z-index: 2;
 }
 
 .hero-content {
@@ -136,6 +147,19 @@ h1 {
     margin-top: 0;
 }
 
+h2 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+h3 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+
 .scroll-indicator {
     position: absolute;
     bottom: 30px;
@@ -157,23 +181,9 @@ h1 {
     position: absolute;
     bottom: 30px;
     right: 80px;
-    background-color: var(--accent-color);
-    color: var(--text-dark);
-    padding: 15px 35px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 500;
-    font-size: 15px;
-    transition: transform var(--transition-fast), background-color var(--transition-fast);
 }
 
-.explore-button:hover {
-    transform: translateY(-3px);
-    background-color: #f2ab3a;
-}
-
-
-/* SECTIONS STYLING (Product Intro, Dark Section, Feature Section) */
+/* --- Content Sections (Homepage) --- */
 .product-intro, .dark-section, .feature-section {
     display: flex;
     align-items: center;
@@ -197,19 +207,6 @@ h1 {
     max-width: 500px;
 }
 
-h2 {
-    font-family: var(--font-serif);
-    font-size: 2.8rem;
-    font-weight: 400;
-    margin-top: 0;
-}
-
-h3 {
-    font-family: var(--font-serif);
-    font-size: 2.2rem;
-    font-weight: 400;
-}
-
 .product-options {
     display: flex;
     gap: 30px;
@@ -218,7 +215,20 @@ h3 {
     color: #666;
 }
 
-.compose-button, .discover-button {
+.dark-section.ferrari-edition {
+    background: var(--background-dark);
+    color: var(--text-light);
+}
+
+.ferrari-image {
+    flex: 1.2;
+}
+
+/* --- Universal Button Styles --- */
+.explore-button, .compose-button, .discover-button {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
     background-color: var(--accent-color);
     color: var(--text-dark);
     padding: 16px 40px;
@@ -231,42 +241,18 @@ h3 {
     transition: transform var(--transition-fast), background-color var(--transition-fast);
 }
 
-.compose-button:hover, .discover-button:hover {
+.explore-button:hover, .compose-button:hover, .discover-button:hover {
     background-color: #f2ab3a;
     transform: translateY(-3px);
 }
 
-.ferrari-edition {
-    background: var(--background-dark);
-    color: var(--text-light);
-}
-
-.ferrari-image {
-    flex: 1.2; /* Makes the image slightly larger than the text area */
-}
-
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
- /* ==============================
+/* ==============================
    Page-Specific: Products Page
 ============================== */
-
 .page-header {
-    padding-top: 150px; /* Space for the fixed header */
-    padding-bottom: 60px;
+    padding: 150px 40px 60px 40px;
     text-align: center;
-    background-color: #f9f9f9; /* A very light grey, almost white */
+    background-color: #f9f9f9;
 }
 
 .page-header h1 {
@@ -288,7 +274,6 @@ h3 {
 
 .product-grid {
     display: grid;
-    /* This creates a responsive grid without media queries */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 40px;
 }
@@ -298,25 +283,25 @@ h3 {
     color: var(--text-dark);
     background: var(--background-light);
     border-radius: 12px;
-    overflow: hidden; /* Ensures the image corners are rounded */
+    overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px B0px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .product-card-image {
-    height: 250px; /* Gives all image containers a uniform height */
-    background-color: #f1f1f1; /* BG for any images that don't load */
+    height: 250px;
+    background-color: #f1f1f1;
 }
 
 .product-card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Crucial for uniform image sizing */
+    object-fit: cover;
     display: block;
 }
 
@@ -347,26 +332,23 @@ h3 {
 /* ==============================
    Page-Specific: Product Detail Page
 ============================== */
-
 .product-detail-container {
-    padding: 150px 80px 80px 80px; /* Top padding for fixed header */
+    padding: 150px 80px 80px 80px;
 }
 
 .product-detail-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: start; /* Aligns items to the top of their grid cell */
+    align-items: start;
 }
 
-/* Column 1: Image */
 .product-image-column img {
     width: 100%;
     border-radius: 18px;
     background-color: #f9f9f9;
 }
 
-/* Column 2: Info */
 .product-info-column h1 {
     font-size: 3rem;
     margin-top: 5px;
@@ -414,12 +396,12 @@ h3 {
 }
 
 .add-to-cart-button {
-    flex-grow: 1; /* Allows the button to fill available space */
+    flex-grow: 1;
     background-color: var(--accent-color);
     color: var(--text-dark);
     border: none;
-    border-radius: 50px;
-    font-weight: 500;
+    border-radius: 30px;
+    font-weight: 200;
     font-size: 16px;
     cursor: pointer;
     transition: transform var(--transition-fast), background-color var(--transition-fast);
@@ -454,20 +436,9 @@ h3 {
     border-bottom: 1px solid #eee;
 }
 
-/* Responsive adjustments for this page */
-@media (max-width: 900px) {
-    .product-detail-grid {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
-    }
-    .product-detail-container {
-        padding: 120px 20px 40px 20px;
-    }
-}
-
 /* ==============================
    Navigation Overlay Menu
 ============================== */
-
 .nav-overlay {
     position: fixed;
     top: 0;
@@ -476,19 +447,16 @@ h3 {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.98);
     backdrop-filter: blur(5px);
-    z-index: 2000; /* Highest z-index to be on top of everything */
-
+    z-index: 2000;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* Hidden by default, slides in from the left */
     transform: translateX(-100%);
     transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .nav-overlay.open {
-    transform: translateX(0); /* The 'open' state */
+    transform: translateX(0);
 }
 
 .nav-overlay-content {
@@ -503,22 +471,20 @@ h3 {
 
 .nav-overlay li {
     margin: 20px 0;
-    opacity: 0; /* Hidden for animation */
-    transform: translateY(20px); /* For animation */
+    opacity: 0;
+    transform: translateY(20px);
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Animate links into view when menu opens */
 .nav-overlay.open li {
     opacity: 1;
     transform: translateY(0);
 }
-/* Stagger the animation of each link */
+
 .nav-overlay.open li:nth-child(1) { transition-delay: 0.2s; }
 .nav-overlay.open li:nth-child(2) { transition-delay: 0.3s; }
 .nav-overlay.open li:nth-child(3) { transition-delay: 0.4s; }
 .nav-overlay.open li:nth-child(4) { transition-delay: 0.5s; }
-
 
 .nav-overlay a {
     color: var(--text-light);
@@ -548,9 +514,553 @@ h3 {
     transform: rotate(90deg);
 }
 
-/* Prevent body scroll when menu is open */
-.body-no-scroll {
-    overflow: hidden;
+/* ==============================
+   Animations
+============================== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==============================
+   Responsive Design
+============================== */
+@media (max-width: 900px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    .hero, .product-intro, .feature-section, .dark-section {
+        flex-direction: column;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .hero {
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .dark-section.ferrari-edition {
+        flex-direction: column-reverse;
+    }
+
+    header {
+        padding: 15px 25px;
+    }
+
+    header .header-left, header .header-right {
+        display: none; /* Simplifies header for mobile */
+    }
+
+    header .menu-btn {
+        display: block; /* Make sure menu button is always visible */
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .explore-button {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        box-sizing: border-box;
+    }
+
+    .product-grid-container {
+        padding: 40px 20px;
+    }
+
+    .product-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-detail-container {
+        padding: 120px 20px 40px 20px;
+    }
+
+    .nav-overlay a {
+        font-size: 2.5rem;
+    }
+
+    .close-btn {
+        right: 25px;
+    }
 }
 
 
+/* ==============================
+   Cart Icon and Page Styling
+============================== */
+#cart-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#cart-counter {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px 6px;
+}
+
+.cart-container {
+    padding: 60px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#cart-items-container .cart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#cart-items-container .item-info {
+    flex-grow: 1;
+}
+
+#cart-items-container .item-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+}
+
+#cart-items-container .item-remove-btn {
+    color: #999;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.cart-summary {
+    margin-top: 40px;
+    text-align: right;
+}
+
+.cart-total {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================================
+   ENHANCEMENTS 2.0: Ultra-Sleek Product Detail Page
+   ========================================================== */
+
+/* 1. Luxurious spacing between columns */
+.product-detail-grid {
+    gap: 120px;
+    align-items: center;
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 2. Typography refinement */
+.product-info-column .eyebrow-text {
+    font-weight: 500;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.product-info-column h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #111, #555);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.product-info-column .product-short-description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+    max-width: 500px;
+    opacity: 0.9;
+}
+
+/* 3. Purchase Box — Sleek Glassy Look */
+.product-purchase-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-purchase-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.08);
+}
+
+.product-price-main {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+/* 4. Button Group — Clean pill style with animations */
+.product-actions {
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.quantity-selector {
+    padding: 0 20px;
+    border: 1px solid #ddd;
+    border-right: none;
+    background: #f9f9f9;
+    font-size: 1rem;
+    min-width: 80px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+.quantity-selector:hover {
+    background: #efefef;
+}
+
+.add-to-cart-button {
+    flex-grow: 1;
+    background: linear-gradient(90deg, #111, #333);
+    color: rgb(5, 167, 19);
+    border: none;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.2s ease;
+}
+.add-to-cart-button:hover {
+    background: linear-gradient(90deg, #af0707, #b40909);
+    transform: scale(1.02);
+}
+
+/* 5. Specs Section — Modern & Neat */
+.product-specs {
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.product-specs h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.product-specs li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid #f1f1f1;
+}
+.product-specs li:hover {
+    background: #f9f9f9;
+}
+
+.product-specs li strong {
+    color: #222;
+    font-weight: 500;
+}
+
+.product-specs li span {
+    color: #666;
+}
+
+/* Optional: Subtle fade-in animation for entire section */
+.product-detail-grid,
+.product-purchase-box,
+.product-specs {
+    animation: fadeInUp 0.6s ease both;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* --- NEW: Category Browser Styling --- */
+.category-browser {
+    padding: 0 80px 40px 80px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 40px;
+}
+.category-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.category-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+.category-links a:hover {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    border-color: var(--text-dark);
+}
+
+
+/* ==============================
+   NEW Professional Footer Styles
+============================== */
+footer {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.footer-main {
+    background-color: #f2f2f2; /* Light grey background */
+    padding: 60px 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates four equal columns */
+    gap: 40px; /* Space between columns */
+}
+
+.footer-column h4 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 20px; /* Controls the size of the icons */
+}
+
+.social-icons a {
+    color: #333;
+}
+
+.footer-legal {
+    background-color: #fff;
+    padding: 25px 80px;
+    border-top: 1px solid #e0e0e0; /* The separator line */
+}
+
+.footer-legal-links {
+    margin-bottom: 15px;
+}
+
+.footer-legal-links a {
+    text-decoration: none;
+    color: #555;
+    margin-right: 25px;
+    font-size: 13px;
+}
+
+.footer-legal-links a:hover {
+    text-decoration: underline;
+}
+
+.copyright-text {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+}
+
+/* --- Responsive for the New Footer --- */
+@media (max-width: 900px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr; /* Two columns on tablets */
+        padding: 40px 20px;
+    }
+    .footer-legal {
+        padding: 25px 20px;
+        text-align: center;
+    }
+    .footer-legal-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-main {
+        grid-template-columns: 1fr; /* One column on mobile */
+    }
+}
+
+/* ==========================================================
+   HOMEPAGE: Showroom Browser Section
+   ========================================================== */
+
+/* --- Main container for the section --- */
+.showroom-browser {
+    padding: 100px 80px;
+    text-align: center;
+    background-color: #f9f9f9; /* A very light grey to separate it from other sections */
+}
+
+/* --- Heading and Subheading --- */
+.showroom-browser h2 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.showroom-browser p {
+    font-size: 1.1rem;
+    color: #777;
+    max-width: 500px;
+    margin: 0 auto 50px auto; /* Centers the paragraph and adds space below */
+}
+
+/* --- The responsive grid for the category cards --- */
+.category-grid {
+    display: grid;
+    /* Creates a responsive grid: as many columns as fit, each at least 300px wide */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* --- Individual Category Card Styling --- */
+.category-card {
+    text-decoration: none;
+    color: var(--text-light); /* Sets the text color for the title */
+    border-radius: 12px;
+    overflow: hidden; /* Crucial for the image zoom effect and rounded corners */
+    position: relative; /* This is the anchor for the absolute positioned title */
+    display: block; /* Makes the whole area clickable */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* --- Interactive Hover Effect for the Card --- */
+.category-card:hover {
+    transform: translateY(-10px); /* Lifts the card up on hover */
+}
+
+/* --- Styling for the Image inside the card --- */
+.category-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Prevents the image from stretching or squashing */
+    display: block; /* Removes extra space below the image */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* --- Zoom effect for the image on hover --- */
+.category-card:hover img {
+    transform: scale(1.1); /* Zooms the image in slightly */
+}
+
+/* --- Styling for the Title that sits on top of the image --- */
+.category-card-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 20px 20px 20px;
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    text-align: left;
+    /* Gradient overlay for text readability against any image */
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+
+ /* ==========================================================
+   COMPONENT: Smart Back Button
+   ========================================================== */
+.back-button-container {
+    /* This container just adds space at the top */
+    padding: 20px 80px 0 80px;
+}
+
+#back-button {
+    display: inline-flex; /* Allows icon and text to align nicely */
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    
+    text-decoration: none;
+    font-weight: 500;
+    color: #555;
+    background-color: #fff;
+    
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 50px; /* Pill shape */
+    
+    transition: all 0.3s ease;
+}
+
+#back-button:hover {
+    background-color: #f5f5f5;
+    color: #000;
+    border-color: #ccc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Responsive adjustments for the container */
+@media (max-width: 900px) {
+    .back-button-container {
+        padding: 20px 20px 0 20px;
+    }
+}

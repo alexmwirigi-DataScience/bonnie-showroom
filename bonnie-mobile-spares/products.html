@@ -3,135 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Collection | Bonnie Mobile Spares Ltd</title>
+    <title>Accessories | Bonnie Mobile Spares Ltd</title>
+
+    <!-- Link to Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Link to Your Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- ==============================
+        HEADER (Should be consistent on all pages)
+    ============================== -->
     <header>
         <div class="header-left">
             <button class="menu-btn">Menu</button>
         </div>
         <a href="index.html" class="logo">
-    <img src="images/bms_logo.png" alt="Bonnie Mobile Spares Logo">
-</a>
-        <div class="header-right">
-            <a href="#">&#128100;</a> <!-- User Icon -->
-            <a href="#">&#128269;</a> <!-- Search Icon -->
-            <a href="#">&#128722;</a> <!-- Cart Icon -->
-        </div>
+            <img src="images/bms_logo.png" alt="Bonnie Mobile Spares Logo">
+        </a>
+     
     </header>
 
+    <!-- ==============================
+        NAVIGATION OVERLAY (Should be consistent on all pages)
+    ============================== -->
+    <nav class="nav-overlay">
+        <div class="nav-overlay-content">
+            <button class="close-btn">&times;</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="LCDDISPLAY.html">LCD Displays</a></li>
+                <li><a href="Tools.html">Repair Tools</a></li>
+                <li><a href="sparesparts.html">Spare Parts</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==============================
+        MAIN PAGE CONTENT
+    ============================== -->
     <main>
 
-        <!-- ============================== -->
-<!--    NAVIGATION OVERLAY MENU     -->
-<!-- ============================== -->
-<nav class="nav-overlay">
-    <div class="nav-overlay-content">
-        <button class="close-btn">&times;</button>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="#">About</a></li> <!-- Placeholder -->
-            <li><a href="#">Contact</a></li> <!-- Placeholder -->
-        </ul>
-    </div>
-</nav>
-         
-<!-- ======================================================================= -->
-<!-- ====================== START: PRODUCTS PAGE CONTENT ===================== -->
-<!-- ======================================================================= -->
+    
+ 
 
-<!-- PAGE HEADER SECTION -->
-<section class="page-header">
-    <h1>Our Collection</h1>
-    <p>Premium tools, accessories, and spare parts for every need.</p>
-</section>
+        <!-- Page Header Section -->
+        <section class="page-header">
+            <h1>Premium Accessories</h1>
+            <p>Keep your devices safe, charged, and stylish with our curated collection.</p>
+        </section>
 
-<!-- PRODUCT GRID SECTION -->
-<section class="product-grid-container">
-    <div class="product-grid">
+        <!-- Optional: Category Browser Section -->
+        <section class="category-browser">
+            <div class="category-links">
+                <a href="accessories.html">Accessories</a>
+                <a href="sparesparts.html">Spare Parts</a>
+                <a href="Tools.html">Repair Tools</a>
+                <a href="LCDDISPLAY.html">LCD Displays</a>
+            </div>
+        </section>
 
-        <!-- Product Card 1 -->
-        <a href="product-detail.html" class="product-card">
-            <div class="product-card-image">
-                <img src="images/Infinix-X693-Note-10-Camera-Glass.png" alt="Camera glass">
-            </div>
-            <div class="product-card-info">
-                <h3>Camera Glass</h3>
-                <p class="product-category">Spare Parts</p>
-                <p class="product-price">200ksh</p>
-            </div>
-        </a>
+        <!-- Product Grid Section -->
+        <section class="product-grid-container">
+            <div class="product-grid">
 
-        <!-- Product Card 2 -->
-        <a href="product-detail.html" class="product-card">
-            <div class="product-card-image">
-                <img src="images/volume_button_flex_cable_for_oppo_a76.jpg" alt="volume_button_flex_cable_for_oppo_a76.jpg">
-            </div>
-            <div class="product-card-info">
-                <h3>volume_button_flex_cable_for_oppo_a76</h3>
-                <p class="product-category">Spare Parts</p>
-                <p class="product-price">300 ksh</p>
-            </div>
-        </a>
+                <!-- Product Card 1: Camera Lens Armor -->
+                <a href="product-detail-cam-armor.html" class="product-card">
+                    <div class="product-card-image">
+                        <img src="images/Infinix-X693-Note-10-Camera-Glass.png" alt="Camera Lens Armor">
+                    </div>
+                    <div class="product-card-info">
+                        <h3>Camera Lens Armor</h3>
+                        <p class="product-category">Accessories</p>
+                        <p class="product-price">ksh 200.00</p>
+                    </div>
+                </a>
 
-        <!-- Product Card 3 -->
-        <a href="product-detail.html" class="product-card">
-             <div class="product-card-image">
-                <img src="images/y17s-power-switch.png" alt="y17s-power-switch.png">
-            </div>
-            <div class="product-card-info">
-                <h3>Vivo y17s-power-switch</h3>
-                <p class="product-category">Spare Parts</p>
-                <p class="product-price">300ksh</p>
-            </div>
-        </a>
+                <!-- Product Card 2: Fast Charger -->
+                <a href="product-detail-fast-charger.html" class="product-card">
+                    <div class="product-card-image">
+                        <img src="images/accessory-charger.jpg" alt="USB-C Fast Charger">
+                    </div>
+                    <div class="product-card-info">
+                        <h3>45W USB-C Fast Charger</h3>
+                        <p class="product-category">Accessories</p>
+                        <p class="product-price">ksh 1200.00</p>
+                    </div>
+                </a>
 
-        <!-- Product Card 4 (Duplicate this block to add more products) -->
-        <a href="product-detail.html" class="product-card">
-            <div class="product-card-image">
-                <!-- Add a new product image to your /images/ folder -->
-                <img src="images/51MhKW68B2L.jpg" alt="Speakers">
-            </div>
-            <div class="product-card-info">
-                <h3>Speakers</h3>
-                <p class="product-category">Spare Parts</p>
-                <p class="product-price">400ksh</p>
-            </div>
-        </a>
+                <!-- Product Card 3: Phone Case -->
+                <a href="product-detail-phone-case.html" class="product-card">
+                     <div class="product-card-image">
+                        <img src="images/accessory-case.jpg" alt="Silicone Phone Case">
+                    </div>
+                    <div class="product-card-info">
+                        <h3>Protective Silicone Case</h3>
+                        <p class="product-category">Accessories</p>
+                        <p class="product-price">ksh 800.00</p>
+                    </div>
+                </a>
 
-         <!-- Product Card 4 (Duplicate this block to add more products) -->
-        <a href="product-detail.html" class="product-card">
-            <div class="product-card-image">
-                <!-- Add a new product image to your /images/ folder -->
-                <img src="images/1.jpg" alt="Infinix Charging Plate">
-            </div>
-            <div class="product-card-info">
-                <h3>Infinix Charging Plate</h3>
-                <p class="product-category">Spare Parts</p>
-                <p class="product-price">400ksh</p>
-            </div>
-        </a>
-        
-        <!-- Add cards 5, 6, 7, 8 etc. here -->
+                <!-- Product Card 4: Braided Cable -->
+                <a href="product-detail-cable.html" class="product-card">
+                    <div class="product-card-image">
+                        <img src="images/accessory-cable.jpg" alt="Braided USB-C Cable">
+                    </div>
+                    <div class="product-card-info">
+                        <h3>Braided USB-C Cable (2m)</h3>
+                        <p class="product-category">Accessories</p>
+                        <p class="product-price">ksh 600.00</p>
+                    </div>
+                </a>
+                
+                <!-- Add more ACCESSORY product cards here -->
 
-    </div>
-</section>
+            </div>
+        </section>
 
-<!-- ======================================================================= -->
-<!-- ======================= END: PRODUCTS PAGE CONTENT ====================== -->
-<!-- ======================================================================= -->
-        
     </main>
 
-    <footer class="dark-section">
-       <div class="footer-container">
-           <p>&copy; Bonnie Mobile Spares Ltd 2025. All Rights Reserved.</p>
-       </div>
+    <!-- ==============================
+        FOOTER (Should be consistent on all pages)
+    ============================== -->
+    <footer>
+        <!-- The professional footer code -->
+        <div class="footer-main">
+            <div class="footer-column">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Orders and delivery</a></li>
+                    <li><a href="#">Returns and refunds</a></li>
+                    <li><a href="#">Payment and pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>About BMSL</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Our Promise</a></li>
+                    <li><a href="#">Policies</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Discounts and Membership</h4>
+                <ul>
+                    <li><a href="#">Affiliate program</a></li>
+                    <li><a href="#">Refer a friend</a></li>
+                    <li><a href="#">BMSL membership</a></li>
+                    <li><a href="#">Student Discount</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Follow us</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <div class="footer-legal-links">
+                <a href="#">Privacy policy</a>
+                <a href="#">Terms and conditions</a>
+                <a href="#">Accessibility</a>
+            </div>
+            <p class="copyright-text">© Copyright 2025 Bonnie Mobile Spares Ltd. All rights reserved.</p>
+        </div>
     </footer>
 
+    <!-- Your JavaScript File -->
     <script src="js/script.js"></script>
+
 </body>
 </html>
