@@ -343,3 +343,214 @@ h3 {
     font-weight: 500;
     margin: 0;
 }
+
+/* ==============================
+   Page-Specific: Product Detail Page
+============================== */
+
+.product-detail-container {
+    padding: 150px 80px 80px 80px; /* Top padding for fixed header */
+}
+
+.product-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 80px;
+    align-items: start; /* Aligns items to the top of their grid cell */
+}
+
+/* Column 1: Image */
+.product-image-column img {
+    width: 100%;
+    border-radius: 18px;
+    background-color: #f9f9f9;
+}
+
+/* Column 2: Info */
+.product-info-column h1 {
+    font-size: 3rem;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.product-short-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 500px;
+}
+
+.product-price-main {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 30px 0;
+}
+
+.product-actions {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+}
+
+.quantity-selector button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.quantity-selector span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+.add-to-cart-button {
+    flex-grow: 1; /* Allows the button to fill available space */
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.add-to-cart-button:hover {
+    background-color: #f2ab3a;
+    transform: translateY(-3px);
+}
+
+.product-specs {
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.product-specs h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.product-specs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #444;
+}
+
+.product-specs li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Responsive adjustments for this page */
+@media (max-width: 900px) {
+    .product-detail-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+    .product-detail-container {
+        padding: 120px 20px 40px 20px;
+    }
+}
+
+/* ==============================
+   Navigation Overlay Menu
+============================== */
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(5px);
+    z-index: 2000; /* Highest z-index to be on top of everything */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Hidden by default, slides in from the left */
+    transform: translateX(-100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.nav-overlay.open {
+    transform: translateX(0); /* The 'open' state */
+}
+
+.nav-overlay-content {
+    text-align: center;
+}
+
+.nav-overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-overlay li {
+    margin: 20px 0;
+    opacity: 0; /* Hidden for animation */
+    transform: translateY(20px); /* For animation */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Animate links into view when menu opens */
+.nav-overlay.open li {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Stagger the animation of each link */
+.nav-overlay.open li:nth-child(1) { transition-delay: 0.2s; }
+.nav-overlay.open li:nth-child(2) { transition-delay: 0.3s; }
+.nav-overlay.open li:nth-child(3) { transition-delay: 0.4s; }
+.nav-overlay.open li:nth-child(4) { transition-delay: 0.5s; }
+
+
+.nav-overlay a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    transition: color var(--transition-fast);
+}
+
+.nav-overlay a:hover {
+    color: var(--accent-color);
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg);
+}
+
+/* Prevent body scroll when menu is open */
+.body-no-scroll {
+    overflow: hidden;
+}
+
+
