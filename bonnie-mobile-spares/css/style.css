@@ -1,0 +1,259 @@
+/* ==============================
+   Global Variables & Base Styles
+============================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap');
+
+:root {
+    --text-light: #ffffff;
+    --text-dark: #111111;
+    --background-dark: #000000;
+    --background-light: #ffffff;
+    --accent-color: #f5b958;
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --transition-fast: 0.3s ease;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* ==============================
+   Reusable Components: Header & Footer
+   (These will be on every page)
+============================== */
+
+/* HEADER */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    box-sizing: border-box;
+    z-index: 1000;
+    color: var(--text-light);
+    transition: background-color var(--transition-fast);
+}
+
+header.scrolled {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+header .logo img {
+    height: 30px;
+}
+
+header .header-left, header .header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header a, header .menu-btn {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+header a:hover, header .menu-btn:hover {
+    color: var(--accent-color);
+}
+
+
+/* FOOTER */
+footer {
+    background: var(--background-dark);
+    color: #aaa;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+/* ==============================
+   Page-Specific: Homepage Sections
+============================== */
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: url('../images/hero-background.jpg') no-repeat center center/cover; /* Make sure you have a hero-background.jpg in /images/ */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: var(--text-light);
+    padding: 0 80px;
+    position: relative;
+}
+
+.hero-overlay {
+    content: "";
+    position: absolute;
+    inset: 0; /* A modern way to say top:0, left:0, bottom:0, right:0 */
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+}
+
+.hero-content, .scroll-indicator, .explore-button {
+    position: relative;
+    z-index: 2; /* Ensures content is above the overlay */
+}
+
+.hero-content {
+    max-width: 550px;
+    animation: fadeUp 1.2s ease-out;
+}
+
+.eyebrow-text {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 80px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.scroll-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-light);
+    margin-top: 5px;
+    opacity: 0.5;
+}
+
+.explore-button {
+    position: absolute;
+    bottom: 30px;
+    right: 80px;
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.explore-button:hover {
+    transform: translateY(-3px);
+    background-color: #f2ab3a;
+}
+
+
+/* SECTIONS STYLING (Product Intro, Dark Section, Feature Section) */
+.product-intro, .dark-section, .feature-section {
+    display: flex;
+    align-items: center;
+    padding: 120px 80px;
+    gap: 80px;
+}
+
+.product-intro-image img, .ferrari-image img, .feature-image img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.product-intro-image img:hover, .ferrari-image img:hover, .feature-image img:hover {
+    transform: scale(1.03);
+}
+
+.product-intro-text, .ferrari-content, .feature-content {
+    flex: 1;
+    max-width: 500px;
+}
+
+h2 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+h3 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+
+.product-options {
+    display: flex;
+    gap: 30px;
+    margin: 25px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.compose-button, .discover-button {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    padding: 16px 40px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.compose-button:hover, .discover-button:hover {
+    background-color: #f2ab3a;
+    transform: translateY(-3px);
+}
+
+.ferrari-edition {
+    background: var(--background-dark);
+    color: var(--text-light);
+}
+
+.ferrari-image {
+    flex: 1.2; /* Makes the image slightly larger than the text area */
+}
+
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
